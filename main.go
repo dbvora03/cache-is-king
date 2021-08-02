@@ -1,13 +1,12 @@
 package main
 
 import (
-	"context"
+	"fmt"
 
+	approuting "cacheisking.com/router"
 	fiber "github.com/gofiber/fiber/v2"
 	cors "github.com/gofiber/fiber/v2/middleware/cors"
 )
-
-var ctx = context.Background()
 
 func main() {
 
@@ -17,5 +16,8 @@ func main() {
 		AllowCredentials: true,
 	}))
 
+	approuting.RoutingSetup(app)
+
+	fmt.Println("listening on http://0.0.0.0:1244")
 	app.Listen(":1244")
 }
