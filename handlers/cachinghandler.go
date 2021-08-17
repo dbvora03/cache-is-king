@@ -83,7 +83,7 @@ func GetCache(c *fiber.Ctx) error {
 		c.Status(200).JSON(&fiber.Map{
 			"success": true,
 			"value": val,
-			"message": "Added to cache successfully",
+			"message": "Retrieved cache successfully",
 		})
 	}
 
